@@ -33,6 +33,7 @@ La aplicación se compone de 7 microservicios desplegados como Pods en un cluste
 ---
 
 ## Estructura del repositorio
+
 k8s-microservices/
 ├── redis-deployment.yaml
 ├── zipkin-deployment.yaml
@@ -80,16 +81,6 @@ kubectl apply -f .
 kubectl get pods
 ```
 
-Salida esperada:
-NAME                         READY   STATUS    RESTARTS   AGE
-auth-xxx                     1/1     Running   0          1m
-frontend-xxx                 1/1     Running   0          1m
-processor-xxx                1/1     Running   0          1m
-redis-xxx                    1/1     Running   0          1m
-todos-xxx                    1/1     Running   0          1m
-todos-xxx                    1/1     Running   0          1m
-users-xxx                    1/1     Running   0          1m
-zipkin-xxx                   1/1     Running   0          1m
 
 ### 5. Obtener la IP del Ingress
 
