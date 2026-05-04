@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: users
+  template:
+    metadata:
+      labels:
+        app: users
+    spec:
+      containers:
+      - name: users
+        image: lauravrv/users-app:v1
+        ports:
+        - containerPort: 8083
+        env:
+        - name: JWT_SECRET
+          value: "PRFT"
+        - name: SERVER_PORT
+          value: "8083"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: users-service
+spec:
+  selector:
+    app: users
+  ports:
+  - port: 8083
+    targetPort: 8083
