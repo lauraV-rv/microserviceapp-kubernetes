@@ -1,6 +1,5 @@
 # Taller: Despliegue de Microservicios con Kubernetes
 
-Este taller consiste en migrar la aplicación de microservicios previamente desplegada con Vagrant + Docker a Kubernetes usando Minikube.
 
 ---
 
