@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: processor
+  namespace: data
 spec:
   replicas: 1
   selector:
@@ -17,7 +18,7 @@ spec:
         image: lauravrv/processor-app:v1
         env:
         - name: REDIS_HOST
-          value: "redis-service"
+          value: "redis-service.data.svc.cluster.local"
         - name: REDIS_PORT
           value: "6379"
         - name: REDIS_CHANNEL
