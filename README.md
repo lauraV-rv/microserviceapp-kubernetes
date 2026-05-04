@@ -20,21 +20,12 @@ La aplicación se compone de 7 microservicios desplegados como Pods en un cluste
 
 ---
 
-## Comparativa Vagrant vs Kubernetes
-
-| Elemento | Vagrant + Docker | Kubernetes |
-|---|---|---|
-| Infraestructura | 9 VMs independientes | 9 Pods en un cluster |
-| Red interna | IPs fijas `192.168.56.x` | DNS interno `nombre-service:puerto` |
-| Balanceo Round Robin | HAProxy manual (2 VMs) | `replicas: 2` en Deployment |
-| Gateway/Proxy | HAProxy en VM dedicada | Nginx Ingress Controller |
-| Configuración | `docker run` con flags | Deployments con variables de entorno |
-
----
 
 ## Estructura del repositorio
 
+```
 k8s-microservices/
+├── README.md
 ├── redis-deployment.yaml
 ├── zipkin-deployment.yaml
 ├── users-deployment.yaml
@@ -43,7 +34,7 @@ k8s-microservices/
 ├── processor-deployment.yaml
 ├── frontend-deployment.yaml
 └── ingress.yaml
-
+```
 
 ---
 
