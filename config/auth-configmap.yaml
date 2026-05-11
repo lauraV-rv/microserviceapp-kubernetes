@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: auth-config
+  namespace: auth
+data:
+  AUTH_API_PORT: "8000"
+  USERS_API_ADDRESS: "http://users-service.auth.svc.cluster.local:8083"
+  ZIPKIN_URL: "http://zipkin-service.data.svc.cluster.local:9411"

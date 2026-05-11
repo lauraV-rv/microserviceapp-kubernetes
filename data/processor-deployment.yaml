@@ -16,10 +16,6 @@ spec:
       containers:
       - name: processor
         image: lauravrv/processor-app:v1
-        env:
-        - name: REDIS_HOST
-          value: "redis-service.data.svc.cluster.local"
-        - name: REDIS_PORT
-          value: "6379"
-        - name: REDIS_CHANNEL
-          value: "log_channel"
+        envFrom:
+        - configMapRef:
+            name: data-config
