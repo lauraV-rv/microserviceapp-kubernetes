@@ -18,9 +18,18 @@ spec:
         image: lauravrv/users-app:v1
         ports:
         - containerPort: 8083
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "256Mi"
+          limits:
+            cpu: "300m"
+            memory: "512Mi"
         env:
         - name: JWT_SECRET
-          value: "PRFT"
+          valueFrom:
+            secretKeyRef:
+              name: app-secrets
+              key: JWT_SECRET
         - name: SERVER_PORT
           value: "8083"
-
